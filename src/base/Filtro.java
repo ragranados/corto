@@ -27,13 +27,13 @@ public class Filtro {
         this.marca = marca;
         this.stock = stock;
         this.existencia = existencia;
-    }
-
-    public Filtro(String marca, int stock, boolean existencia) {
-        this.marca = marca;
-        this.stock = stock;
-        this.existencia = existencia;
     }*/
+
+    public Filtro(String codigo, int cantidad, int precio, boolean disponibilidad) {
+        this.cantidad = cantidad;
+        this.precio = precio;
+        this.disponibilidad = disponibilidad;
+    }
 
     public Filtro(int id, String nombre, String codigo, String tipo, int cantidad, int precio, boolean disponibilidad) {
         this.id = id;

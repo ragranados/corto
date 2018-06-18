@@ -82,7 +82,16 @@ public class Ventana extends JPanel{
             }
         });
         
-        
+        actualizar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int cantidadl = Integer.parseInt(cantidad.getText());
+                int preciol = Integer.parseInt(precio.getText());
+                //int cantidad, int precio, boolean disponibilidad
+                filtro.update(new Filtro(codigo.getText(),cantidadl,preciol,true));
+                
+            }
+        });
         
         add(nombre);
         add(lblnombre);

@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  */
 public class FiltroDao implements Metodos <Filtro>{
     private static final String SQL_INSERT = "INSERT INTO productos (id,nombre,codigo,tipo,cantidad,precio,disponibilidad) VALUES (?,?,?,?,?,?,?)";
-    private static final String SQL_UPDATE = "UPDATE productos SET id = ?, nombre = ?, codigo = ? , tipo = ? , cantidad = ?, precio = ? , disponibilidad = ? WHERE codigo = ?";
+    private static final String SQL_UPDATE = "UPDATE productos SET  cantidad = ?, precio = ? , disponibilidad = ? WHERE codigo = ?";
     private static final String SQL_DELETE = " DELETE FROM productos WHERE codigo = ?";
     private static final String SQL_READ = "SELECT * FROM productos WHERE codigo = ?";
     private static final String SQL_READALL = "SELECT * FROM productos";
@@ -81,13 +81,10 @@ public class FiltroDao implements Metodos <Filtro>{
             //id,nombre,codigo,tipo,cantidad,precio,disponibilidad
             System.out.println(c.getCodigo());
             ps = con.getCnx().prepareStatement(SQL_UPDATE);
-            ps.setInt(1, c.getId());
-            ps.setString(2, c.getNombre());
-            ps.setString(3, c.getCodigo());
-            ps.setString(4, c.getTipo());
-            ps.setInt(5, c.getCantidad());
-            ps.setInt(6, c.getPrecio());
-            ps.setBoolean(7, c.isDisponibilidad());
+            
+            ps.setInt(1, c.getCantidad());
+            ps.setInt(2, c.getPrecio());
+            ps.setBoolean(3, c.isDisponibilidad());
             if(ps.executeUpdate()>0){
                 return true;
             }
