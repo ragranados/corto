@@ -43,7 +43,7 @@ public class Ventana extends JPanel{
         this.lblcodigo = new JLabel("codigo");
         lblcodigo.setBounds(25,55,70,30);
         
-        this.codigo = new JTextField("FY6473");
+        this.codigo = new JTextField();
         codigo.setBounds(new Rectangle(90,55,widthTF, heightTF));
         
         this.lblprecio = new JLabel("precio");
