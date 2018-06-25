@@ -142,4 +142,19 @@ public class FiltroDao implements Metodos <Filtro>{
         }
         return all;
     }
+
+    @Override
+    public boolean insertar(Filtro c) {
+            Filtro f = new Filtro();
+            Statement s;
+        try {
+            s = con.getCnx().prepareStatement(SQL_INSERT);
+            s.execute(SQL_INSERT);
+            
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(FiltroDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return true;
+    }
 }

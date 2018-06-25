@@ -38,7 +38,7 @@ public class Conexion {
         user = "root";
         pass = "";
         driver ="com.mysql.jdbc.Driver";
-        url = "jdcb:mysql://localhost/productos";
+        url = "jdbc:mysql://localhost/productos";
         
     }
     
